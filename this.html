@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Document</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+/*
+	this出现的场景分为四类
+		1、没有调用对象就指向全局对象：window是js中的全局对象
+		2、有对象就指向调用对象
+		3、用new构造就指向新对象
+		4、通过apply、call或bind来改变this的指向
+
+	改变this的场景
+		1、事件
+		2、定时器、延时器
+		3、回调函数：this都会指向window(严格模式下，this不指向window(定时器、延迟器除外))
+		
+	
+
+	
+
+
+ */
+	
+  
+	/*	
+	var name = "张三";
+	function fn(){
+		console.log(this)
+		console.log(this.name)
+	}
+	fn();
+
+
+	var obj = {
+		name:"李四",
+		fn:fn
+	} 
+	obj.fn();
+	
+	var obj = {
+		name:"李四",
+		foo:{
+			name:"王五"
+			fn:fn
+		}
+	} 
+	obj.foo.fn()
+
+
+	
+
+
+	var j = obj.foo.fn;
+	j();
+
+
+
+	var a  = function(){
+		this.name = "张三";
+	}
+	var p = new a();
+	console.log(p.name)
+
+	fn.apply(obj);
+	fn.call(obj);
+	var fn1 = obj.fn.bind(window)
+	fn1()
+	
+	*/
+	
+	
+	var name = "张三";
+	function fn(){
+		console.log(this)
+		console.log(this.name)
+	}
+	
+	var obj = {
+		name:"李四",
+		fn:fn
+	} 
+	
+	fn.apply(obj);
+	fn.call(obj);
+	var fn1 = obj.fn.bind(window)
+	fn1()
+
+</script>
