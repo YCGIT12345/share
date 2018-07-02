@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div{
+		width: 180px;
+		height: 300px;
+		position: absolute;
+		background: url(girl.png) no-repeat 0 0;
+	}
+	</style>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+
+	function Girl(right,top){
+		this.right= right;
+		this.top = top;
+		this.timer = null;
+		this.walk = 0;
+		this.init();
+		this.run();
+	}
+	Girl.prototype.init=function(){
+		this.div = document.createElement("div");
+		document.body.appendChild(this.div);
+		this.div.style.right = this.right+"px";
+		this.div.style.top  = this.top+"px";
+	}
+	Girl.prototype.run = function(){
+		var _this = this;
+		this.timer = setInterval(function(){
+			_this.walk++;
+			if(_this.walk>6){
+				_this.walk=0;
+			}
+			_this.right+=10;
+			if(_this.right>800){
+				_this.disappear();
+			}
+			_this.div.style.right=_this.right+"px";
+			_this.div.style.backgroundPosition = _this.walk*-180+"px 0px";
+
+		},100)
+	}
+	Girl.prototype.disappear=function(){
+		clearInterval(this.timer);
+		document.body.removeChild(this.div);
+	}
+
+
+	setInterval(function(){
+		new Girl(0,Math.random()*500);
+	},100)
+	
+</script>

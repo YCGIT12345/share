@@ -1,0 +1,18 @@
+
+
+/* floatPanel */
+#floatPanel .ctrolPanel{width:50px;height:200px;border:solid 1px #ddd;position:fixed;right:20px;top:300px;overflow:hidden;z-index:10000; _position:absolute; background:#fff;border-radius: 5px}
+#floatPanel .ctrolPanel a{width:50px;font-size:14px;color:#969696;letter-spacing:1px;text-align:center;overflow:hidden;line-height: 60px}
+#floatPanel .ctrolPanel .arrow{height:50px;display:block;}
+#floatPanel .ctrolPanel .contact{height:50px;display:block;}
+#floatPanel .ctrolPanel .qrcode{height:50px;display:block;}
+
+
+#floatPanel .popPanel{width:230px;height:242px;position:fixed;right:70px;top:300px;z-index:10000;overflow:hidden;display:none;_position:absolute; }
+#floatPanel .popPanel .popPanel-inner{width:230px;height:242px;position:relative;overflow:hidden;}
+#floatPanel .popPanel .popPanel-inner .arrowPanel{width:10px;height:240px;position:absolute;right:1px;top:102px;}
+
+#floatPanel .popPanel .popPanel-inner .qrcodePanel{width:220px;height:200px;text-align:center;background:#fff;border:solid 1px #ddd;position:absolute;left:0;top:0;overflow:hidden;}
+#floatPanel .popPanel .popPanel-inner .qrcodePanel img{width:200px;height:180px;border:none;padding:10px;}
+
+
